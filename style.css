@@ -1,6 +1,6 @@
 body {
     font: 100%/1.5 system-ui;
-    max-width: 80ch;
+    max-width: 100ch;
     margin-inline: auto;
     padding: 0 1rem;
   }
@@ -44,3 +44,23 @@ nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
   background-color: oklch(from var(--color-accent) 95% 5% h)
 }
+
+input, textarea, button {
+  font: inherit;
+}
+
+label {
+  display: block;
+  margin-block: 0.3em;
+}
+
+input, textarea, button {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  margin-block: 1em;
+}
+
