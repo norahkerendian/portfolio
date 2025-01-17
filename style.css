@@ -105,3 +105,48 @@ h1 {
 h2 {
   margin: 0; 
 }
+
+section {
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(31, 72, 141, 0.1);
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul {
+  padding-left: 1.5rem;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+article h4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.dates {
+  margin-left: auto;
+  white-space: nowrap;
+}
