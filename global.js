@@ -77,3 +77,20 @@ select.addEventListener('input', function (event) {
     console.log('color scheme changed to', event.target.value);
     setColorScheme(event.target.value);
   });
+
+
+const form = document.querySelector("form[action='mailto:nokerendian@ucsd.edu']");
+
+form?.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    let data = new FormData(form);
+    let url = form.action + '?';
+
+    for (let [name, value] of data) {
+        console.log(name, encodeURIComponent(value));
+        url += `${encodeURIComponent(name)}=${encodeURIComponent(value)}&`;
+    }
+
+    location.href = url;
+});
