@@ -183,3 +183,11 @@ h3 {
 #profile-stats dd {
   grid-row: 2;
 }
+
+.projects img {
+  width: 100%;  
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+  /* border-radius: 8px; Optional: Gives a rounded corner effect */
+}

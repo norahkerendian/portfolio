@@ -2,8 +2,8 @@
     {
         "title": "Year-Round Sunshine Levels",
         "year": "2025",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "The visualization aims to highlight which city consistently experiences the highest average sunshine hours throughout the year, which happened to be San Diego."
+        "image": "../images/project1_img.png",
+        "description": "The visualization aims to highlight which city consistently experiences the highest average sunshine hours throughout the year, which happened to be San Diego. I created a narrative that emphasizes San Diego's distinct advantage in providing sunny weather, making it an ideal destination for travelers seeking consistent sunshine."
     },
     {
         "title": "Recipe Analysis Project",
@@ -12,53 +12,59 @@
         "description": "As an undergraduate student with a packed schedule, cooking is both a creative outlet, a balancing act, and an opportunity to not have dining hall meals. When I cook, time is often of the essence, and the number of steps in a recipe can determine whether a meal is quick and satisfying or a time-consuming challenge. With this in mind, this report delves into how the complexity and duration of recipes might influence ratings of recipes, particularly for those who, like me, juggle academics, commitments, and the desire for homemade meals."
     },
     {
-        "title": "Culpa perspiciatis cupiditate maiores?",
+        "title": "DUI Analysis Project",
+        "year": "2023",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Tenetur molestias sed similique laudantium! Obcaecati et adipisci perferendis, nulla voluptate explicabo, exercitationem, molestias aliquid voluptatem voluptates eum numquam maxime fugit ab nemo corrupti sapiente unde! Saepe exercitationem sunt veritatis!"
+        "description": "Our group worked on a data analysis to understand the impact of DUI on car crash severity and to identify age-specific trends in DUI-related collisions in Los Angeles. We leveraged the detailed LA Traffic Collision dataset, which through its MO Codes, enabled us to ascertain patterns in crash severity and victim demographics. Our findings revealed that DUI-related accidents lead to higher injury levels compared to non-DUI incidents and disproportionately affect individuals within the 20-25 and 35-50 age brackets. These insights underscore the pressing need for targeted interventions to mitigate the risks of DUI, particularly among these vulnerable age groups, and enhance community safety."
     },
     {
-        "title": "Assumenda vel perspiciatis vero.",
+        "title": "Gradebook",
+        "year": "2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Animi cumque distinctio eum veritatis. Impedit, repudiandae. Itaque assumenda quidem, quasi velit praesentium quam corrupti eos accusamus vero dolore maiores tenetur error nisi recusandae omnis blanditiis dolorem in at sed."
+        "description": "In this project, I worked with the gradebook for CSD 18, a fictional data science course with 535 students co-taught by Professors Yutian and Dylan. I helped Professors Yutian and Dylan compute the total course grade for every student in their course and analyze their students' performances throughout the quarter."
+
     },
     {
-        "title": "Aut labore illo nemo?",
+        "title": "Loan Applications",
+        "year": "2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Ut debitis qui similique perferendis aliquid exercitationem assumenda ducimus ex possimus. Ipsa, atque consectetur. Voluptates odio exercitationem, rerum repellat nisi, perspiciatis distinctio tempore quam neque quo ratione nihil? Quidem, excepturi."
+        "description": "In this project, I explored how various borrower characteristics are related to one another, in an attempt to better understand the complexity behind loans. It's important to keep in mind, that this dataset only contains information about actually approved loans, not all loan applications."
     },
     {
-        "title": "Iusto consequatur doloribus distinctio.",
+        "title": "Language Models",
+        "year": "2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Ab, tenetur nam explicabo voluptatibus quidem optio maxime exercitationem delectus, ut accusantium vero recusandae eligendi laboriosam eaque consequatur repudiandae repellendus molestiae adipisci quae quos dolor incidunt quod quisquam omnis! Nihil!"
+        "description": "In this project, I buildt my own language models, using publicly-available books found on Project Gutenberg."
     },
     {
-        "title": "Doloremque fuga voluptate quis.",
+        "title": "Image Processing App",
+        "year": "2023",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Dolorem alias ratione eaque esse vitae quis sint nemo nobis placeat maxime unde tempore soluta, laborum impedit ducimus neque sunt accusantium quaerat ex vero facilis maiores qui, dolorum iusto? Dolor?"
+        "description": "Made a basic image processing app in DSC 20 using a KNN classifier."
     },
     {
-        "title": "Natus saepe voluptatem ut?",
+        "title": "Relationships and Trends between Compensation, Education, and Technology for Data Science Careers",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Autem velit eos consectetur enim nesciunt officia expedita molestiae in ex error, sit cum mollitia asperiores inventore alias voluptates nihil adipisci quidem odio rem quae, sunt est fugiat. Voluptas, minima."
+        "description": "As students who aspire to use data science in our future careers, we decided to analyze the dataset that best suited our interests and could answer some of our personal questions."
     },
     {
-        "title": "Perspiciatis aut sapiente minus!",
+        "title": "UCSD Admissions Project/Analysis",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Recusandae quasi perspiciatis totam maxime accusantium id ea sed dolores commodi iusto ipsum ad in, debitis quia quos corrupti a nesciunt laboriosam magnam obcaecati aut voluptas explicabo fugiat. Ad, praesentium!"
+        "description": "In this project, I took a look at UC San Diego's undergraduate admissions numbers for the class of first-year students (i.e. not transfers) that entered in Fall 2022. The data comes directly from the University of California's Information Center."
     },
     {
-        "title": "Libero, est. Quod, tempora.",
+        "title": "Meteroites Data Analysis",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Nostrum eos sed illo voluptatum temporibus voluptatem. Ad sed ducimus quasi suscipit, officiis minus quos ullam nostrum accusamus voluptatem eius, minima expedita ipsam voluptate quisquam facere laudantium dolor odio esse!"
+        "description": "In this project, I took a look at a dataset about meteroites and used all my skills at the time (dsc 10 level) to create a through analysis of the data."
     },
     {
-        "title": "Eaque reiciendis quia rerum?",
+        "title": "Earnest vs Deceptive Visualizations (WIP)",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Rem exercitationem dolorum adipisci soluta. Nam tempora illo, hic aliquam placeat vel exercitationem. Iure doloremque sapiente blanditiis laborum fugiat totam cum voluptate placeat ullam. Veniam modi consequatur aliquid. Libero, earum!"
+        "description": "Currently working with some Mouse Data to create one earnest and one deceptive visualization. This is a work in progress."
     },
     {
-        "title": "Autem provident doloribus nisi?",
+        "title": "Book Recommender Application (WIP)",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Quos, iusto? Qui placeat sed corporis, culpa voluptatem autem facere, consequuntur voluptas reprehenderit ad aut sequi harum mollitia eos ullam velit minus provident ea labore cupiditate, eaque reiciendis. Earum, reiciendis?"
+        "description": "Working with GoodReads personal data to create a ML model that recommends books based on various features. This is a work in progress."
     }
 ]
