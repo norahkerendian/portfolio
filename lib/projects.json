@@ -1,13 +1,15 @@
 [
     {
-        "title": "Lorem ipsum dolor sit.",
+        "title": "Year-Round Sunshine Levels",
+        "year": "2025",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, officiis? Voluptatem sunt nam aliquid tenetur numquam molestiae atque tempore iste praesentium, odio quaerat possimus amet itaque nostrum maxime repellat sit?"
+        "description": "The visualization aims to highlight which city consistently experiences the highest average sunshine hours throughout the year, which happened to be San Diego."
     },
     {
-        "title": "Sed iste voluptatibus rerum.",
+        "title": "Recipe Analysis Project",
+        "year": "2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Inventore assumenda sequi eaque aut quae reiciendis nesciunt repellendus provident sunt, autem earum fuga dicta, eum illum vitae culpa quia amet est harum alias sed suscipit repudiandae! Culpa, obcaecati amet?"
+        "description": "As an undergraduate student with a packed schedule, cooking is both a creative outlet, a balancing act, and an opportunity to not have dining hall meals. When I cook, time is often of the essence, and the number of steps in a recipe can determine whether a meal is quick and satisfying or a time-consuming challenge. With this in mind, this report delves into how the complexity and duration of recipes might influence ratings of recipes, particularly for those who, like me, juggle academics, commitments, and the desire for homemade meals."
     },
     {
         "title": "Culpa perspiciatis cupiditate maiores?",
