@@ -98,6 +98,7 @@ form?.addEventListener('submit', function (event) {
 export async function fetchJSON(url) {
   try {
       // Fetch the JSON file from the given URL
+      console.log(url)
       const response = await fetch(url);
       if (!response.ok) {
         console.log('response')
@@ -105,7 +106,7 @@ export async function fetchJSON(url) {
         
     }
       const data = await response.json();
-    return data; 
+      return data; 
 
 
   } catch (error) {
@@ -115,18 +116,16 @@ export async function fetchJSON(url) {
 
 fetchJSON('../lib/projects.json').then(data => console.log(data));
 
-// export async function fetchJSON(url) {
-//   try {
-//       console.log(`Fetching: ${url}`); // Debug log
-//       const response = await fetch(url);
-//       if (!response.ok) {
-//         throw new Error(`Failed to fetch projects: ${response.statusText}`);
-//       }
-//       const data = await response.json();
-//       return data; 
-//   } catch (error) {
-//       console.error('Error fetching or parsing JSON data:', error);
-//   }
-// }
+export function renderProjects(project, containerElement, headingLevel = 'h2') {
+  containerElement.innerHTML = '';
+  const article = document.createElement('article');
 
-// fetchJSON('lib/projects.json').then(data => console.log('Fetched Data:', data));
+  article.innerHTML = `
+      <${headingLevel}>${project.title}</${headingLevel}>
+      <img src="${project.image}" alt="${project.title}">
+      <p>${project.description}</p>
+  `;
+
+  containerElement.appendChild(article);
+
+}
