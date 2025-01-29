@@ -114,7 +114,7 @@ export async function fetchJSON(url) {
   }
 }
 
-fetchJSON('lib/projects.json').then(data => console.log(data));
+fetchJSON('portfolio/lib/projects.json').then(data => console.log(data));
 
 export function renderProjects(project, containerElement, headingLevel = 'h2') {
   containerElement.innerHTML = '';
