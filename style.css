@@ -164,3 +164,22 @@ h3 {
   margin-left: auto;
   white-space: nowrap;
 }
+
+#profile-stats {
+  margin-top: 20px;
+}
+
+#profile-stats dl {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  grid-gap: 10px; 
+}
+
+#profile-stats dt {
+  grid-row: 1; 
+  font-weight: bold; 
+}
+
+#profile-stats dd {
+  grid-row: 2;
+}
