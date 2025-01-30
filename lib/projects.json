@@ -2,7 +2,7 @@
     {
         "title": "Year-Round Sunshine Levels",
         "year": "2025",
-        "image": "./../images/project1_img.png",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "The visualization aims to highlight which city consistently experiences the highest average sunshine hours throughout the year, which happened to be San Diego. I created a narrative that emphasizes San Diego's distinct advantage in providing sunny weather, making it an ideal destination for travelers seeking consistent sunshine."
     },
     {
