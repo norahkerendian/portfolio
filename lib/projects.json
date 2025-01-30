@@ -44,26 +44,31 @@
     },
     {
         "title": "Relationships and Trends between Compensation, Education, and Technology for Data Science Careers",
+        "year": "2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "As students who aspire to use data science in our future careers, we decided to analyze the dataset that best suited our interests and could answer some of our personal questions."
     },
     {
         "title": "UCSD Admissions Project/Analysis",
+        "year": "2023",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "In this project, I took a look at UC San Diego's undergraduate admissions numbers for the class of first-year students (i.e. not transfers) that entered in Fall 2022. The data comes directly from the University of California's Information Center."
     },
     {
         "title": "Meteroites Data Analysis",
+        "year": "2023",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "In this project, I took a look at a dataset about meteroites and used all my skills at the time (dsc 10 level) to create a through analysis of the data."
     },
     {
         "title": "Earnest vs Deceptive Visualizations (WIP)",
+        "year": "2025",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Currently working with some Mouse Data to create one earnest and one deceptive visualization. This is a work in progress."
     },
     {
         "title": "Book Recommender Application (WIP)",
+        "year": "2025",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Working with GoodReads personal data to create a ML model that recommends books based on various features. This is a work in progress."
     }
