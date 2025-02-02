@@ -191,3 +191,9 @@ h3 {
   object-fit: contain;
   border-radius: 8px; Optional: Gives a rounded corner effect 
   } */
+
+.project-year {
+  color: gray;
+  font-variant-numeric: oldstyle-nums;
+  font-family: Baskerville; 
+}
