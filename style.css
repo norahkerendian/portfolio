@@ -237,3 +237,26 @@ ul.legend li em {
 ul.legend li span {
   flex-shrink: 0;
 }
+
+svg:has(path:hover) {
+  path:not(:hover) {
+    opacity: 50%;
+  }
+}
+
+path {
+  transition: 300ms;
+}
+
+.selected {
+  --color: oklch(60% 45% 0) !important;
+
+  &:is(path) {
+    fill: var(--color);
+  }
+}
+
+path {
+  /* ... */
+  cursor: pointer;
+}
