@@ -197,3 +197,9 @@ h3 {
   font-variant-numeric: oldstyle-nums;
   font-family: Baskerville; 
 }
+
+svg {
+  max-width: 20em;
+  margin-block: 2em;
+  overflow: visible;
+}
