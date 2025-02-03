@@ -115,6 +115,13 @@ document.addEventListener("DOMContentLoaded", async () => {
             });
         }
     }
+
+    function updateTitle(count) {
+        document.querySelector(".projects-title").textContent = `${count} Projects`;
+    }
+    
+    updateTitle(projects.length);
+
     searchInput.addEventListener("input", (event) => {
         let filteredProjects = setQuery(event.target.value);
         renderProjects(filteredProjects, projectsContainer, "h2");
@@ -125,6 +132,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         embedArcClick(newArcs, filteredProjects, newData);
         updateLegend(newData, selectedIndex);
+
+        updateTitle(filteredProjects.length);
     });
 
     let colors = d3.scaleOrdinal(d3.schemeTableau10);
