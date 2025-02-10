@@ -59,25 +59,6 @@ nav a:hover {
   font-family: inherit; 
 }
 
-/* input, textarea, button {
-  font: inherit;
-}
-
-label {
-  display: block;
-  margin-block: 0.3em;
-}
-
-input, textarea, button {
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-button {
-  margin-block: 1em;
-} */
-
 form {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -262,3 +243,21 @@ path {
   cursor: pointer;
 }
 
+.stats {
+  margin-top: 20px;
+}
+
+stats dl {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  grid-gap: 10px; 
+}
+
+stats dt {
+  grid-row: 1; 
+  font-weight: bold; 
+}
+
+stats dd {
+  grid-row: 2;
+}
