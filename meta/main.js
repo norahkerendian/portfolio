@@ -137,8 +137,8 @@ function createScatterplot() {
 
     gridlines.call(d3.axisLeft(yScale).tickFormat('').tickSize(-usableArea.width))
         .selectAll("line")
-        .style("stroke", (d) => colorScale(d)) // Apply color based on time
-        .style("stroke-opacity", 0.6) // Keep them subtle
+        .style("stroke", (d) => colorScale(d))
+        .style("stroke-opacity", 0.6) 
         .style("stroke-width", 1.5);
 
     // Create the axes
