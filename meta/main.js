@@ -57,7 +57,7 @@ function displayStats() {
     dl.append('dd').text(data.length);
   
     dl.append('dt').text('Total commits');
-    dl.append('dd').text(commits.legth);
+    dl.append('dd').text(commits.length);
   
     // Add more stats as needed...
 
@@ -162,11 +162,32 @@ function createScatterplot() {
     const dots = svg.append('g').attr('class', 'dots');
 
     dots
-    .selectAll('circle')
-    .data(commits)
-    .join('circle')
-    .attr('cx', (d) => xScale(d.datetime))
-    .attr('cy', (d) => yScale(d.hourFrac))
-    .attr('r', 5)
-    .attr('fill', 'steelblue');
+        .selectAll('circle')
+        .data(commits)
+        .join('circle')
+        .attr('cx', (d) => xScale(d.datetime))
+        .attr('cy', (d) => yScale(d.hourFrac))
+        .attr('r', 5)
+        .attr('fill', 'steelblue')
+        .on('mouseenter', (event, commit) => {
+            updateTooltipContent(commit);
+          })
+          .on('mouseleave', () => {
+            updateTooltipContent({}); // Clear tooltip content
+          });
 }
+
+// step 3
+
+function updateTooltipContent(commit) {
+    const link = document.getElementById('commit-link');
+    const date = document.getElementById('commit-date');
+  
+    if (Object.keys(commit).length === 0) return;
+  
+    link.href = commit.url;
+    link.textContent = commit.id;
+    date.textContent = commit.datetime?.toLocaleString('en', {
+      dateStyle: 'full',
+    });
+  }
