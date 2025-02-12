@@ -46,6 +46,7 @@ function processCommits() {
 document.addEventListener('DOMContentLoaded', async () => {
     await loadData();
     createScatterplot();
+    brushSelector();
 });
 
 function displayStats() {
@@ -204,3 +205,12 @@ function updateTooltipPosition(event) {
     tooltip.style.left = `${event.clientX}px`;
     tooltip.style.top = `${event.clientY}px`;
 }
+
+// step 5
+
+function brushSelector() {
+    const svg = document.querySelector('svg');
+    d3.select(svg).call(d3.brush());
+
+    d3.select(svg).selectAll('.dots, .overlay ~ *').raise();
+  }
