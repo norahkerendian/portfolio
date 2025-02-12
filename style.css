@@ -323,7 +323,7 @@ dl.info[hidden]:not(:hover, :focus-within) {
 
 @keyframes marching-ants {
   to {
-    stroke-dashoffset: -8; /* 5 + 3 */
+    stroke-dashoffset: -8; 
   }
 }
 
@@ -333,4 +333,13 @@ dl.info[hidden]:not(:hover, :focus-within) {
   stroke-opacity: 0.7;
   stroke-dasharray: 5 3;
   animation: marching-ants 2s linear infinite;
+}
+
+circle.selected {
+  fill: #ff6b6b;
+}
+
+svg {
+  width: 100%;
+  max-width: none;
 }
