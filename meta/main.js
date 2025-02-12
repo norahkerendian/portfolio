@@ -172,6 +172,7 @@ function createScatterplot() {
         .on('mouseenter', (event, commit) => {
             updateTooltipContent(commit);
             updateTooltipVisibility(true);
+            updateTooltipPosition(event);
           })
           .on('mouseleave', () => {
             updateTooltipContent({}); // Clear tooltip content
@@ -202,3 +203,8 @@ function updateTooltipVisibility(isVisible) {
     tooltip.hidden = !isVisible;
 }
 
+function updateTooltipPosition(event) {
+    const tooltip = document.getElementById('commit-tooltip');
+    tooltip.style.left = `${event.clientX}px`;
+    tooltip.style.top = `${event.clientY}px`;
+}
