@@ -294,14 +294,15 @@ dl.info dd {
   position: fixed;
   top: 1em;
   left: 1em;
-  /* background-color: white;
-  border: 1px solid black;
-  padding: 8px;
-  border-radius: 4px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); */
+  background-color: rgba(255, 255, 255, 0.9); 
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); 
+  border-radius: 6px; 
+  padding: 8px 12px; 
+  backdrop-filter: blur(5px); 
+  /* visibility: hidden; 
+  pointer-events: none; 
+  transition: opacity 0.2s ease-in-out; */
 }
-
-
 
 circle {
   transition: 200ms;

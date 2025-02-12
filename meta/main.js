@@ -182,6 +182,9 @@ function createScatterplot() {
 function updateTooltipContent(commit) {
     const link = document.getElementById('commit-link');
     const date = document.getElementById('commit-date');
+    // const time = document.getElementById('commit-time');
+    // const author = document.getElementById('commit-author');
+    // const lines = document.getElementById('commit-lines-edited');
   
     if (Object.keys(commit).length === 0) return;
   
