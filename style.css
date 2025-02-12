@@ -261,3 +261,14 @@ stats dt {
 stats dd {
   grid-row: 2;
 }
+
+.gridlines line {
+  stroke: lightgray; 
+  stroke-opacity: 0.5; 
+  stroke-dasharray: 4 4; 
+}
+
+.gridlines path {
+  stroke: lightgray;
+  stroke-opacity: 0.5;
+}
