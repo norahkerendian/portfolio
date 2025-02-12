@@ -4,7 +4,7 @@ let commits = [];
 async function loadData() {
     data = await d3.csv('loc.csv', (row) => ({
       ...row,
-      line: Number(row.line), // or just +row.line
+      line: Number(row.line),
       depth: Number(row.depth),
       length: Number(row.length),
       date: new Date(row.date + 'T00:00' + row.timezone),
@@ -59,19 +59,14 @@ function displayStats() {
     dl.append('dt').text('Total commits');
     dl.append('dd').text(commits.length);
   
-    // Add more stats as needed...
-
-    // average line length
     const avgLineLength = d3.mean(data, d => d.length);
     dl.append('dt').text('Average line length (characters)');
-    dl.append('dd').text(avgLineLength.toFixed(2)); // round to 2 decimals
+    dl.append('dd').text(avgLineLength.toFixed(2)); 
 
-    // longest line length
     const longestLineLength = d3.max(data, d => d.length);
     dl.append('dt').text('Longest line length (characters)');
     dl.append('dd').text(longestLineLength);
     
-    // Calculate time of day when most work is done
     const workByPeriod = d3.rollups(
         data,
         (v) => v.length,
@@ -91,8 +86,9 @@ function displayStats() {
 
 // step 2
 function createScatterplot() {
-    const width = 1000;
-    const height = 600;
+    const sortedCommits = d3.sort(commits, (d) => -d.totalLines);
+    const width = 1000; // 1000
+    const height = 1000; // 600
     const margin = { top: 10, right: 10, bottom: 30, left: 20 };
 
     const svg = d3
@@ -118,18 +114,13 @@ function createScatterplot() {
         height: height - margin.top - margin.bottom,
       };
       
-    // Update scales with new ranges
     xScale.range([usableArea.left, usableArea.right]);
     yScale.range([usableArea.bottom, usableArea.top]);
 
-    // Add gridlines BEFORE the axes
     const gridlines = svg
     .append('g')
     .attr('class', 'gridlines')
     .attr('transform', `translate(${usableArea.left}, 0)`);
-
-    // Create gridlines as an axis with no labels and full-width ticks
-    // gridlines.call(d3.axisLeft(yScale).tickFormat('').tickSize(-usableArea.width));
 
     const colorScale = d3.scaleLinear()
     .domain([0, 6, 12, 18, 24]) 
@@ -141,41 +132,43 @@ function createScatterplot() {
         .style("stroke-opacity", 0.6) 
         .style("stroke-width", 1.5);
 
-    // Create the axes
     const xAxis = d3.axisBottom(xScale);
     const yAxis = d3
         .axisLeft(yScale)
         .tickFormat((d) => String(d % 24).padStart(2, '0') + ':00');
 
-    // Add X axis
     svg
     .append('g')
     .attr('transform', `translate(0, ${usableArea.bottom})`)
     .call(xAxis);
 
-    // Add Y axis
     svg
     .append('g')
     .attr('transform', `translate(${usableArea.left}, 0)`)
     .call(yAxis);
 
     const dots = svg.append('g').attr('class', 'dots');
+    const [minLines, maxLines] = d3.extent(commits, (d) => d.totalLines);
+    const rScale = d3.scaleSqrt().domain([minLines, maxLines]).range([5, 30]); 
 
     dots
         .selectAll('circle')
-        .data(commits)
+        .data(sortedCommits)
         .join('circle')
         .attr('cx', (d) => xScale(d.datetime))
         .attr('cy', (d) => yScale(d.hourFrac))
-        .attr('r', 5)
+        .attr('r', (d) => rScale(d.totalLines))
+        .style('fill-opacity', 0.7) 
         .attr('fill', 'steelblue')
         .on('mouseenter', (event, commit) => {
+            d3.select(event.currentTarget).style('fill-opacity', 1); 
             updateTooltipContent(commit);
             updateTooltipVisibility(true);
             updateTooltipPosition(event);
           })
           .on('mouseleave', () => {
-            updateTooltipContent({}); // Clear tooltip content
+            d3.select(event.currentTarget).style('fill-opacity', 0.7); 
+            updateTooltipContent({}); 
             updateTooltipVisibility(false);
           });
 }
@@ -185,9 +178,9 @@ function createScatterplot() {
 function updateTooltipContent(commit) {
     const link = document.getElementById('commit-link');
     const date = document.getElementById('commit-date');
-    // const time = document.getElementById('commit-time');
-    // const author = document.getElementById('commit-author');
-    // const lines = document.getElementById('commit-lines-edited');
+    const time = document.getElementById('commit-time');
+    const author = document.getElementById('commit-author');
+    const lines = document.getElementById('commit-lines-edited');
   
     if (Object.keys(commit).length === 0) return;
   
@@ -196,6 +189,9 @@ function updateTooltipContent(commit) {
     date.textContent = commit.datetime?.toLocaleString('en', {
       dateStyle: 'full',
     });
+    time.textContent = commit.time;
+    author.textContent = commit.author;
+    lines.textContent = commit.totalLines;
   }
 
 function updateTooltipVisibility(isVisible) {
