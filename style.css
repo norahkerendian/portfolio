@@ -339,7 +339,7 @@ circle.selected {
   fill: #ff6b6b;
 }
 
-svg {
+#chart svg {
   width: 100%;
   max-width: none;
 }
