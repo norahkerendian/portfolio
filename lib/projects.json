@@ -71,5 +71,12 @@
         "year": "2025",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "The visualization aims to highlight which city consistently experiences the highest average sunshine hours throughout the year, which happened to be San Diego. I created a narrative that emphasizes San Diego's distinct advantage in providing sunny weather, making it an ideal destination for travelers seeking consistent sunshine."
+    },
+    {
+        "title": "Bike Watching Map",
+        "year": "2025",
+        "image": "../projects/file.svg",
+        "url": "https://norahkerendian.github.io/bikewatching/",
+        "description": "This project is an interactive map of the depature and arrival amounts of bikes in Boston and Cambridge, MA. This map allows users to explore the data in a more interactive way, and see how the data changes over time."
     }
 ]
