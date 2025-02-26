@@ -2,6 +2,7 @@ let data = [];
 let commits = [];
 let xScale;
 let yScale;
+let selectedCommits = []; // added step 0
 
 async function loadData() {
     data = await d3.csv('loc.csv', (row) => ({
@@ -164,13 +165,13 @@ function createScatterplot() {
         .style('fill-opacity', 0.7) 
         .attr('fill', 'steelblue')
         .on('mouseenter', (event, commit) => {
-            d3.select(event.currentTarget).style('fill-opacity', 1); 
+            d3.select(event.currentTarget).classed('selected', true);//.style('fill-opacity', 1); added step 0
             updateTooltipContent(commit);
             updateTooltipVisibility(true);
             updateTooltipPosition(event);
         })
         .on('mouseleave', () => {
-            d3.select(event.currentTarget).style('fill-opacity', 0.7); 
+            d3.select(event.currentTarget).classed('selected', false);//.style('fill-opacity', 0.7); added step 0
             updateTooltipContent({}); 
             updateTooltipVisibility(false);
         });
@@ -218,38 +219,46 @@ function brushSelector() {
 
 let brushSelection = null;
 
-function brushed(event) {
-    brushSelection = event.selection;
-    updateSelection();
-    updateSelectionCount();
-    updateLanguageBreakdown();
+// function brushed(event) {
+//     brushSelection = event.selection;
+//     updateSelection();
+//     updateSelectionCount();
+//     updateLanguageBreakdown();
 
-    // sanity check
-    if (!event.selection) return; 
-    //  if there's a selection element
-        const [[x0, y0], [x1, y1]] = event.selection;
-        console.log('Brushed area:', x0, y0, x1, y1);
+//     // sanity check
+//     if (!event.selection) return; 
+//     //  if there's a selection element
+//         const [[x0, y0], [x1, y1]] = event.selection;
+//         console.log('Brushed area:', x0, y0, x1, y1);
+// }
+// added step 0
+function brushed(evt) {
+  let brushSelection = evt.selection;
+  selectedCommits = !brushSelection
+    ? []
+    : commits.filter((commit) => {
+        let min = { x: brushSelection[0][0], y: brushSelection[0][1] };
+        let max = { x: brushSelection[1][0], y: brushSelection[1][1] };
+        let x = xScale(commit.date);
+        let y = yScale(commit.hourFrac);
+
+        return x >= min.x && x <= max.x && y >= min.y && y <= max.y;
+      });
 }
 
+// function isCommitSelected(commit) {
+//     if (!brushSelection) {
+//       return false;
+//     }
+//     const min = { x: brushSelection[0][0], y: brushSelection[0][1] }; 
+//     const max = { x: brushSelection[1][0], y: brushSelection[1][1] }; 
+//     const x = xScale(commit.date); 
+//     const y = yScale(commit.hourFrac); 
+//     return x >= min.x && x <= max.x && y >= min.y && y <= max.y;
+// }
+// added step 0
 function isCommitSelected(commit) {
-    if (!brushSelection) {
-      return false;
-    }
-    // TODO: return true if commit is within brushSelection and false if not
-
-    // const [x0, y0] = brushSelection[0];
-    // const [x1, y1] = brushSelection[1];
-
-    // const x = xScale(commit.datetime);
-    // const y = yScale(commit.hourFrac);
-
-    // return x >= x0 && x <= x1 && y >= y0 && y <= y1;
-
-    const min = { x: brushSelection[0][0], y: brushSelection[0][1] }; 
-    const max = { x: brushSelection[1][0], y: brushSelection[1][1] }; 
-    const x = xScale(commit.date); 
-    const y = yScale(commit.hourFrac); 
-    return x >= min.x && x <= max.x && y >= min.y && y <= max.y;
+  return selectedCommits.includes(commit);
 }
   
 function updateSelection() {
